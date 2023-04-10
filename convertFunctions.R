@@ -59,7 +59,7 @@ getSpecies <- function (data, infield, outfield)
 Convert2DDMMYYYY <- function (data, infield, outfield)
 {
   temp <- data [,infield] %>% 
-    parse_date(format = "%d %B, %Y") %>% 
+    parse_datetime(format = "%d %B, %Y") %>% 
     as.character.Date(format = "%d%m%Y") %>% 
     as.data.frame()
   colnames(temp) <- outfield
